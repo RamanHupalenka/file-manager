@@ -1,6 +1,6 @@
 import { EOL } from 'os';
 
-export const formatUserNameInput = (username) => username.trim(EOL);
+export const formatInput = (input) => input.trim(EOL);
 
 export const isInputEmpty = (username) => username.length === 0;
 

@@ -2,7 +2,7 @@ import { EOL } from 'os';
 import { createInterface } from 'readline/promises';
 import { handleExitInput } from '../handlers/exit-handler.js';
 import { handleUpInput } from '../handlers/up-handler.js';
-import { getFinalMessageToUser } from '../utils/string.js';
+import { getFinalMessageToUser, formatInput } from '../utils/string.js';
 
 export const createReadLineInterface = (userName) => {
     const rli = createInterface({
@@ -11,7 +11,7 @@ export const createReadLineInterface = (userName) => {
     });
 
     rli.on('line', (input) => {
-        const formattedInput = input.trim();
+        const formattedInput = formatInput(input);
 
         switch (true) {
             case formattedInput.startsWith('.exit'):
