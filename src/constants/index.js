@@ -1,5 +1,6 @@
 export const userNameParamPattern = '--username=';
 export const anonymousUserName = 'Anonymous';
+export const diskLetterPattern = /^[a-zA-Z]\:$/;
 
 export const exitCommandPattern = /^\.exit$/;
 export const upCommandPattern = /^up$/;

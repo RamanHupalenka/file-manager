@@ -3,6 +3,7 @@ import { createInterface } from 'readline/promises';
 import { handleExitInput } from '../handlers/exit-handler.js';
 import { handleLsInput } from '../handlers/ls-handler.js';
 import { handleUpInput } from '../handlers/up-handler.js';
+import { handleCdInput } from '../handlers/cd-handler.js';
 import { getFinalMessageToUser, formatInput } from '../utils/string.js';
 
 export const createReadLineInterface = (userName) => {
@@ -23,6 +24,9 @@ export const createReadLineInterface = (userName) => {
                 break;
             case formattedInput.startsWith('ls'):
                 await handleLsInput(formattedInput);
+                break;
+            case formattedInput.startsWith('cd'):
+                handleCdInput(formattedInput);
                 break;
             default:
                 console.log(`Invalid input${EOL}`);
