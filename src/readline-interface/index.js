@@ -21,7 +21,7 @@ export const createReadLineInterface = (userName) => {
                 handleUpInput(formattedInput);
                 break;
             default:
-                console.log(`${EOL}Invalid input${EOL}`);
+                console.log(`Invalid input${EOL}`);
                 break;
         }
 

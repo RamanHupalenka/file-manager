@@ -7,6 +7,6 @@ export const handleUpInput = (input) => {
     if (isCorrectUpCommandInput) {
         runUpCommand();
     } else {
-        console.log(`${EOL}Invalid input${EOL}`);
+        console.log(`Invalid input${EOL}`);
     }
 };

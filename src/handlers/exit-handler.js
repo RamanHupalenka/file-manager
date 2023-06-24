@@ -11,6 +11,6 @@ export const handleExitInput = (input, userName) => {
 
         process.exit(0);
     } else {
-        console.log(`${EOL}Invalid input${EOL}`);
+        console.log(`Invalid input${EOL}`);
     }
 };
