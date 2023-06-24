@@ -1,6 +1,7 @@
 import { EOL } from 'os';
 import { createInterface } from 'readline/promises';
 import { handleExitInput } from '../handlers/exit-handler.js';
+import { handleLsInput } from '../handlers/ls-handler.js';
 import { handleUpInput } from '../handlers/up-handler.js';
 import { getFinalMessageToUser, formatInput } from '../utils/string.js';
 
@@ -10,7 +11,7 @@ export const createReadLineInterface = (userName) => {
         output: process.stdout,
     });
 
-    rli.on('line', (input) => {
+    rli.on('line', async (input) => {
         const formattedInput = formatInput(input);
 
         switch (true) {
@@ -19,6 +20,9 @@ export const createReadLineInterface = (userName) => {
                 break;
             case formattedInput.startsWith('up'):
                 handleUpInput(formattedInput);
+                break;
+            case formattedInput.startsWith('ls'):
+                await handleLsInput(formattedInput);
                 break;
             default:
                 console.log(`Invalid input${EOL}`);

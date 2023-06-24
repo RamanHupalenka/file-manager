@@ -6,3 +6,5 @@ const getUserInfo = () =>
     });
 
 export const getUserHomeDir = () => getUserInfo().homedir;
+
+export const getSystemUserName = () => getUserInfo().username;
