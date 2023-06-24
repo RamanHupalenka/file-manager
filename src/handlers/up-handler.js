@@ -1,3 +1,4 @@
+import { EOL } from 'os';
 import { runUpCommand } from '../nwd/up.js';
 import { upCommandPattern } from '../constants/index.js';
 

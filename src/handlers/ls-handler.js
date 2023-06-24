@@ -1,3 +1,4 @@
+import { EOL } from 'os';
 import { runLsCommand } from '../nwd/ls.js';
 import { lsCommandPattern } from '../constants/index.js';
 

@@ -1,3 +1,4 @@
+import { EOL } from 'os';
 import { getFinalMessageToUser } from '../utils/string.js';
 import { exitCommandPattern } from '../constants/index.js';
 
