@@ -4,6 +4,7 @@ import { handleExitInput } from '../handlers/exit-handler.js';
 import { handleLsInput } from '../handlers/ls-handler.js';
 import { handleUpInput } from '../handlers/up-handler.js';
 import { handleCdInput } from '../handlers/cd-handler.js';
+import { handleOSInput } from '../handlers/os-handler.js';
 import { getFinalMessageToUser, formatInput } from '../utils/string.js';
 
 export const createReadLineInterface = (userName) => {
@@ -27,6 +28,9 @@ export const createReadLineInterface = (userName) => {
                 break;
             case formattedInput.startsWith('cd'):
                 handleCdInput(formattedInput);
+                break;
+            case formattedInput.startsWith('os'):
+                handleOSInput(formattedInput);
                 break;
             default:
                 console.log(`Invalid input${EOL}`);
