@@ -17,4 +17,8 @@ const userHomeDir = getUserHomeDir();
 
 process.chdir(userHomeDir);
 
+process.on('warning', () => {});
+process.on('uncaughtException', () => {});
+process.on('unhandledRejection', () => {});
+
 runFileManager();
