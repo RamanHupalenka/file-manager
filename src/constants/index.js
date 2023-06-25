@@ -7,11 +7,11 @@ export const upCommandPattern = /^up$/;
 export const lsCommandPattern = /^ls$/;
 export const cdCommandPattern = /^(\s*cd\s+)+(.+)$/;
 
-export const osEOLPattern = /^\s*os\s+\-\-EOL\s*$/;
-export const osCpusPattern = /^\s*os\s+\-\-cpus\s*$/;
-export const osHomedirPattern = /^\s*os\s+\-\-homedir\s*$/;
-export const osUserNamePattern = /^\s*os\s+\-\-username\s*$/;
-export const osArchitecturePattern = /^\s*os\s+\-\-architecture\s*$/;
+export const osEOLPattern = /^os\s+\-\-EOL$/;
+export const osCpusPattern = /^os\s+\-\-cpus$/;
+export const osHomedirPattern = /^os\s+\-\-homedir$/;
+export const osUserNamePattern = /^os\s+\-\-username$/;
+export const osArchitecturePattern = /^os\s+\-\-architecture$/;
 
-export const compressCommandPattern = /^\s*compress\s+(\S+|["']{1}.+["']{1}){1}\s+(\S+|["']{1}.+["']{1}){1}\s*$/;
-export const decompressCommandPattern = /^\s*decompress\s+(\S+|["']{1}.+["']{1}){1}\s+(\S+|["']{1}.+["']{1}){1}\s*$/;
+export const compressCommandPattern = /^compress\s+(\S+|["']{1}([^"'])+["']{1}){1}\s+(\S+|["']{1}([^"'])+["']{1}){1}$/;
+export const decompressCommandPattern = /^decompress\s+(\S+|["']{1}([^"'])+["']{1}){1}\s+(\S+|["']{1}([^"'])+["']{1}){1}$/;
