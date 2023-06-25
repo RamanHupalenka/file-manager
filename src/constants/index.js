@@ -12,3 +12,6 @@ export const osCpusPattern = /^\s*os\s+\-\-cpus\s*$/;
 export const osHomedirPattern = /^\s*os\s+\-\-homedir\s*$/;
 export const osUserNamePattern = /^\s*os\s+\-\-username\s*$/;
 export const osArchitecturePattern = /^\s*os\s+\-\-architecture\s*$/;
+
+export const compressCommandPattern = /^\s*compress\s+(\S+|["']{1}.+["']{1}){1}\s+(\S+|["']{1}.+["']{1}){1}\s*$/;
+export const decompressCommandPattern = /^\s*decompress\s+(\S+|["']{1}.+["']{1}){1}\s+(\S+|["']{1}.+["']{1}){1}\s*$/;
