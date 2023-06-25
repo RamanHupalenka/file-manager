@@ -21,7 +21,7 @@ const performCdByPath = (path) => {
 
 export const runCdCommand = (input) => {
     const commandMatch = input.match(cdCommandPattern);
-    const cdPath = commandMatch[2];
+    const cdPath = commandMatch[1];
     const parsedPath = parse(cdPath);
     const resultPath = parsedPath.base ? join(parsedPath.dir, parsedPath.base) : parsedPath.dir;
 
