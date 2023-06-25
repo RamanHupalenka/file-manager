@@ -8,6 +8,12 @@ import { handleOSInput } from '../handlers/os-handler.js';
 import { handleCompressInput } from '../handlers/compress-handler.js';
 import { handleDecompressInput } from '../handlers/decompress-handler.js';
 import { handleHashInput } from '../handlers/hash-handler.js';
+import { handleAddInput } from '../handlers/add-handler.js';
+import { handleCatInput } from '../handlers/cat-handler.js';
+import { handleCpInput } from '../handlers/cp-handler.js';
+import { handleMvInput } from '../handlers/mv-handler.js';
+import { handleRmInput } from '../handlers/rm-handler.js';
+import { handleRnInput } from '../handlers/rn-handler.js';
 import { getFinalMessageToUser, formatInput } from '../utils/string.js';
 
 export const createReadLineInterface = (userName) => {
@@ -43,6 +49,24 @@ export const createReadLineInterface = (userName) => {
                 break;
             case formattedInput.startsWith('hash'):
                 await handleHashInput(formattedInput);
+                break;
+            case formattedInput.startsWith('add'):
+                await handleAddInput(formattedInput);
+                break;
+            case formattedInput.startsWith('cat'):
+                await handleCatInput(formattedInput);
+                break;
+            case formattedInput.startsWith('cp'):
+                await handleCpInput(formattedInput);
+                break;
+            case formattedInput.startsWith('mv'):
+                await handleMvInput(formattedInput);
+                break;
+            case formattedInput.startsWith('rm'):
+                await handleRmInput(formattedInput);
+                break;
+            case formattedInput.startsWith('rn'):
+                await handleRnInput(formattedInput);
                 break;
             default:
                 console.log(`Invalid input${EOL}`);

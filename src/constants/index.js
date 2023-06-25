@@ -18,3 +18,10 @@ export const decompressCommandPattern =
     /^decompress\s+(\S+|["']{1}([^"'])+["']{1}){1}\s+(\S+|["']{1}([^"'])+["']{1}){1}$/;
 
 export const hashCommandPattern = /^hash\s+(.+)$/;
+
+export const addCommandPattern = /^add\s+(.+)$/;
+export const catCommandPattern = /^cat\s+(.+)$/;
+export const cpCommandPattern = /^cp\s+(\S+|["']{1}([^"'])+["']{1}){1}\s+(\S+|["']{1}([^"'])+["']{1}){1}$/;
+export const mvCommandPattern = /^mv\s+(\S+|["']{1}([^"'])+["']{1}){1}\s+(\S+|["']{1}([^"'])+["']{1}){1}$/;
+export const rmCommandPattern = /^rm\s+(.+)$/;
+export const rnCommandPattern = /^rn\s+(\S+|["']{1}([^"'])+["']{1}){1}\s+(\S+|["']{1}([^"'])+["']{1}){1}$/;
