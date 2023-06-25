@@ -6,6 +6,7 @@ import { handleUpInput } from '../handlers/up-handler.js';
 import { handleCdInput } from '../handlers/cd-handler.js';
 import { handleOSInput } from '../handlers/os-handler.js';
 import { handleCompressInput } from '../handlers/compress-handler.js';
+import { handleDecompressInput } from '../handlers/decompress-handler.js';
 import { getFinalMessageToUser, formatInput } from '../utils/string.js';
 
 export const createReadLineInterface = (userName) => {
@@ -35,6 +36,9 @@ export const createReadLineInterface = (userName) => {
                 break;
             case formattedInput.startsWith('compress'):
                 await handleCompressInput(formattedInput);
+                break;
+            case formattedInput.startsWith('decompress'):
+                await handleDecompressInput(formattedInput);
                 break;
             default:
                 console.log(`Invalid input${EOL}`);
