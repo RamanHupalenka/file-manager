@@ -1,6 +1,6 @@
 import { EOL } from 'os';
 import { rmCommandPattern } from '../constants/index.js';
-import { runRmCommand } from '';
+import { runRmCommand } from '../fs/rm.js';
 
 export const handleRmInput = async (input) => {
     try {

@@ -1,6 +1,6 @@
 import { EOL } from 'os';
 import { cpCommandPattern } from '../constants/index.js';
-import { runCpCommand } from '';
+import { runCpCommand } from '../fs/cp.js';
 
 export const handleCpInput = async (input) => {
     try {

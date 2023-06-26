@@ -1,6 +1,6 @@
 import { EOL } from 'os';
 import { rnCommandPattern } from '../constants/index.js';
-import { runRnCommand } from '';
+import { runRnCommand } from '../fs/rn.js';
 
 export const handleRnInput = async (input) => {
     try {

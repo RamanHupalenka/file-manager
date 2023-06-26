@@ -1,6 +1,6 @@
 import { EOL } from 'os';
 import { addCommandPattern } from '../constants/index.js';
-import { runAddCommand } from '';
+import { runAddCommand } from '../fs/add.js';
 
 export const handleAddInput = async (input) => {
     try {

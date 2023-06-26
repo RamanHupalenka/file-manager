@@ -1,6 +1,6 @@
 import { EOL } from 'os';
 import { mvCommandPattern } from '../constants/index.js';
-import { runMvCommand } from '';
+import { runMvCommand } from '../fs/mv.js';
 
 export const handleMvInput = async (input) => {
     try {

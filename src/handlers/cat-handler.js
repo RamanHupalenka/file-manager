@@ -1,6 +1,6 @@
 import { EOL } from 'os';
 import { catCommandPattern } from '../constants/index.js';
-import { runCatCommand } from '';
+import { runCatCommand } from '../fs/cat.js';
 
 export const handleCatInput = async (input) => {
     try {
