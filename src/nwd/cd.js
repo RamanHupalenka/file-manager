@@ -1,5 +1,6 @@
 import { isAbsolute, parse, join, resolve } from 'path';
 import { cdCommandPattern, diskLetterPattern } from '../constants/index.js';
+import { removeQuotesFromPath } from '../utils/string.js';
 
 const performCdToDiskRoot = (path) => {
     const pathToDiskRoot = resolve(path, '/');
@@ -21,7 +22,7 @@ const performCdByPath = (path) => {
 
 export const runCdCommand = (input) => {
     const commandMatch = input.match(cdCommandPattern);
-    const cdPath = commandMatch[1];
+    const cdPath = removeQuotesFromPath(commandMatch[1]);
     const parsedPath = parse(cdPath);
     const resultPath = parsedPath.base ? join(parsedPath.dir, parsedPath.base) : parsedPath.dir;
 

@@ -1,7 +1,11 @@
 import { isAbsolute, resolve } from 'path';
 import { diskLetterPattern } from '../constants/index.js';
+import { removeQuotesFromPath } from '../utils/string.js';
 
-export const formatPathsToAbsolute = (pathToFile, pathToFolder) => {
+export const formatPathsToAbsolute = (commandMatch) => {
+    let pathToFile = removeQuotesFromPath(commandMatch[1]);
+    let pathToFolder = removeQuotesFromPath(commandMatch[3]);
+
     if (diskLetterPattern.test(pathToFolder)) {
         pathToFolder = resolve(pathToFolder, '/');
     }
@@ -13,4 +17,6 @@ export const formatPathsToAbsolute = (pathToFile, pathToFolder) => {
     if (!isAbsolute(pathToFolder)) {
         pathToFolder = resolve(process.cwd(), pathToFolder);
     }
+
+    return [pathToFile, pathToFolder];
 };

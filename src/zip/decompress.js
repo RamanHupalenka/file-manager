@@ -3,7 +3,6 @@ import { parse, resolve } from 'path';
 import { createBrotliDecompress } from 'zlib';
 import { decompressCommandPattern } from '../constants/index.js';
 import { isFilePath, isFolderPath } from '../utils/fs.js';
-import { removeQuotesFromPath } from '../utils/string.js';
 import { formatPathsToAbsolute } from '../utils/path.js';
 
 const performDecompression = async (pathToFile, pathToFolder) => {
@@ -29,10 +28,7 @@ const performDecompression = async (pathToFile, pathToFolder) => {
 export const runDecompressCommand = async (input) => {
     const commandMatch = input.match(decompressCommandPattern);
 
-    let pathToFile = removeQuotesFromPath(commandMatch[1]);
-    let pathToFolder = removeQuotesFromPath(commandMatch[3]);
-
-    formatPathsToAbsolute(pathToFile, pathToFolder);
+    const [pathToFile, pathToFolder] = formatPathsToAbsolute(commandMatch);
 
     const isFirstArgFilePath = await isFilePath(pathToFile);
     const isSecondArgFolderPath = await isFolderPath(pathToFolder);
